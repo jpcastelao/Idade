@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+<body>
+    <h1>Classificar a Idade</h1>
+
+<label for="idade">Qual é a sua idade:</label>
+<input type="number" id="idade" name="idade">
+<button onclick="classificar()">Classificar</button>
+
+<p id="resultado"></p>
+
+<script>
+function classificar() {
+    var idade = parseInt(document.getElementById("idade").value);
+    var resultado = document.getElementById("resultado");
+
+    if (idade <= 10) {
+        resultado.textContent = "Criança";
+    } else if (idade === 11) {
+        resultado.textContent = "Pré-adolescente";
+    } else if (idade >= 12 && idade <= 17) {
+        resultado.textContent = "Adolescente";
+    } else if (idade >= 18 && idade <= 60) {
+        resultado.textContent = "Adulto";
+    } else {
+        resultado.textContent = "Idoso";
+    }
+
+    if (idade >= 18) {
+        resultado.textContent += " (Você é maior de idade)";
+    } else {
+        resultado.textContent += " (Você não é maior de idade )";
+    }
+}
+
+</script>
+</body>
+</html>
